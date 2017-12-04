@@ -1,0 +1,11 @@
+a=imread('C:\Users\NIKHIL RAJ\Desktop\PROJECT IMAGE SEGMENTAT-ION\cameraman.bmp');
+an=imnoise(a,'gaussian',0.01);
+figure,imshow(a);
+figure,imshow(an);
+sigma=3;
+cutoff=ceil(3*sugma);
+h=fspecial('gaussian',2*cutoff*1,sigma);
+out=conv2(a,h,'size');
+figure,imshow(out);
+figure,imshow(out/256);
+out1=conv2(an,h,'size');

@@ -1,0 +1,53 @@
+clc
+I = imread('C:\Users\NIKHIL RAJ\Desktop\PROJECT IMAGE SEGMENTAT-ION\images.jpg');
+I1 = imread('C:\Users\NIKHIL RAJ\Desktop\PROJECT IMAGE SEGMENTAT-ION\cameraman.bmp');
+imgr=img_src(:,:,1);
+imgg=img_src(:,:,2);
+imgb=img_src(:,:,3);
+imgr2=I1(:,:,1);
+imgg2=I1(:,:,2);
+imgb2=I1(:,:,3);
+Mnimgr2=imhist(imgr2);
+Mnimgg2=imhist(imgg2);
+Mnimgb2=imhist(imgb2);
+outr=histeq(imgr,Mnimgr2);
+outg=histeq(imgg,Mnimgg2);
+outb=histeq(imgb,Mnimgb2);
+histsp(:,:,1)=outr;
+histsp(:,:,2)=outg;
+histsp(:,:,3)=outb;
+figure;
+subplot(2,2,1);
+figure, imshow(I1); title('I2 image');
+subplot(2,2,2);
+figure, imshow(img_src); title('input image');
+subplot(2,2,4);
+figure, imshow(histsp); title('output image');
+figure;
+subplot(3,3,1);
+plot(Mniimgr);
+title('red input');
+subplot(3,3,4);
+plot(Mniimgg);
+title('green input');
+subplot(3,3,7);
+plot(Mniimgb);
+title('blue input');
+subplot(3,3,2);
+plot(Mniimgr2);
+title('red I1');
+subplot(3,3,5);
+plot(Mniimgg2);
+title('green I1');
+subplot(3,3,8);
+plot(Mniimgb2);
+title('blue I1');
+subplot(3,3,3)
+imhist(outr);
+title('red result');
+subplot(3,3,6)
+imhist(outg);
+title('green result');
+subplot(3,3,9)
+imhist(outb);
+title('blue result');

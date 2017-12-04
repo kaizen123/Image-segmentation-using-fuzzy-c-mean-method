@@ -1,0 +1,11 @@
+x = imread('C:\Users\NIKHIL RAJ\Desktop\PROJECT IMAGE SEGMENTAT-ION\images.jpg');
+figure;
+subplot(1,2,1); imshow(x);
+subplot(1,2,2); imhist(x);
+imh=imadjust(x,[0.3,0.6],[0.0,1.0]);
+imh1=histeq(x);
+figure;
+subplot(2,2,1); imshow(imh);title('stretch');
+subplot(2,2,2); imhist(imh);
+subplot(2,2,3); imshow(imh1);title('hist eq');
+subplot(2,2,4); imhist(imh1);

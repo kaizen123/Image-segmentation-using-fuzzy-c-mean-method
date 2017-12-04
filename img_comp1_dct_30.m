@@ -1,0 +1,14 @@
+x = imread('C:\Users\NIKHIL RAJ\Desktop\PROJECT IMAGE SEGMENTAT-ION\images.jpg');
+imshow(x);
+ad=dct2(x);
+h=imagesc(ad);
+impixelregion(h);
+x=imread('C:\Users\NIKHIL RAJ\Desktop\PROJECT IMAGE SEGMENTAT-ION\cameraman.jpg');
+ad=dct2(rgb2gray(x));
+h=imagesc(ad);
+impixelregion(h);
+x=imread('C:\Users\NIKHIL RAJ\Desktop\PROJECT IMAGE SEGMENTAT-ION\images.jpg');
+figure, imshow(x);
+ad=dct2(rgb2gray(x));
+h=imagesc(ad);
+impixelregion(h);
